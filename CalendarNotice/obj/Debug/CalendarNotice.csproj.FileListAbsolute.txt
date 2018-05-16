@@ -1,0 +1,1 @@
+c:\users\johnpaulnguyen\documents\visual studio 2013\Projects\CalendarNotice\CalendarNotice\bin\Debug\CalendarNotice.exe.config
