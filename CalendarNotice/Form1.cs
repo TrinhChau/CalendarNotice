@@ -43,7 +43,7 @@ namespace CalendarNotice
 
             try
             {
-                DeserializeFromXML(filePath);
+                Job = DeserializeFromXML(filePath) as PlanData ;
             }
             catch
             { 
@@ -64,6 +64,46 @@ namespace CalendarNotice
                 Job = "Demo thooi ahihi",
                 Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
             });
+
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                FromTime = new Point(4, 0),
+                ToTime = new Point(5, 0),
+                Job = "Demo thooi ahihi",
+                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+            });
+
+
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                FromTime = new Point(4, 0),
+                ToTime = new Point(5, 0),
+                Job = "Demo thooi ahihi",
+                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+            });
+
+
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                FromTime = new Point(4, 0),
+                ToTime = new Point(5, 0),
+                Job = "Demo thooi ahihi",
+                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+            });
+
+
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now.AddDays(-1),
+                FromTime = new Point(4, 0),
+                ToTime = new Point(5, 0),
+                Job = "Demo thooi ahihi",
+                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+            });
+             
              
 
         }

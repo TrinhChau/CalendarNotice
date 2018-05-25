@@ -10,3 +10,14 @@ D:\Choay's Box\Chau_nam 2\OOP\Projects\CalendarNotice\CalendarNotice\obj\Debug\C
 D:\Choay's Box\Chau_nam 2\OOP\Projects\CalendarNotice\CalendarNotice\obj\Debug\CalendarNotice.csproj.GenerateResource.Cache
 D:\Choay's Box\Chau_nam 2\OOP\Projects\CalendarNotice\CalendarNotice\obj\Debug\CalendarNotice.exe
 D:\Choay's Box\Chau_nam 2\OOP\Projects\CalendarNotice\CalendarNotice\obj\Debug\CalendarNotice.pdb
+D:\Project\CalendarNotice\bin\Debug\CalendarNotice.exe.config
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.exe
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.pdb
+D:\Project\CalendarNotice\bin\Debug\CalendarNotice.exe
+D:\Project\CalendarNotice\bin\Debug\CalendarNotice.pdb
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.csprojResolveAssemblyReference.cache
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.AJob.resources
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.DailyPlan.resources
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.Form1.resources
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.Properties.Resources.resources
+D:\Project\CalendarNotice\obj\Debug\CalendarNotice.csproj.GenerateResource.Cache

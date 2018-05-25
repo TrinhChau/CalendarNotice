@@ -117,6 +117,7 @@
             this.Controls.Add(this.mnsMain);
             this.MainMenuStrip = this.mnsMain;
             this.Name = "DailyPlan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DailyPlan";
             this.panel1.ResumeLayout(false);
             this.mnsMain.ResumeLayout(false);

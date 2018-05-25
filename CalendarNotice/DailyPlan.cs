@@ -35,6 +35,21 @@ namespace CalendarNotice
             this.Date = date;
             this.Job = job;
 
+            FlowLayoutPanel fPanel = new FlowLayoutPanel();
+            fPanel.Width = pnlJob.Width;
+            fPanel.Height = pnlJob.Height;
+            pnlJob.Controls.Add(fPanel);
+
+            if(Job != null && Job.Job != null){
+                for (int i = 0; i < Job.Job.Count; i++)
+                {
+                    AJob ajob = new AJob(Job.Job[i]);
+                    fPanel.Controls.Add(ajob);
+                }
+
+            }
+
+
             dtpDate.Value = Date;
         }
         void showJobByDate(DateTime date)
