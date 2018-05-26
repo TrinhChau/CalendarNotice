@@ -28,6 +28,8 @@ namespace CalendarNotice
             set { job = value; }
         }
 
+        FlowLayoutPanel fPanel = new FlowLayoutPanel();
+
         public DailyPlan(DateTime date, PlanData job)
         {
             InitializeComponent();
@@ -35,26 +37,31 @@ namespace CalendarNotice
             this.Date = date;
             this.Job = job;
 
-            FlowLayoutPanel fPanel = new FlowLayoutPanel();
+           
             fPanel.Width = pnlJob.Width;
             fPanel.Height = pnlJob.Height;
             pnlJob.Controls.Add(fPanel);
-
-            if(Job != null && Job.Job != null){
-                for (int i = 0; i < Job.Job.Count; i++)
-                {
-                    AJob ajob = new AJob(Job.Job[i]);
-                    fPanel.Controls.Add(ajob);
-                }
-
-            }
-
 
             dtpDate.Value = Date;
         }
         void showJobByDate(DateTime date)
         {
+            fPanel.Controls.Clear();
+            if (Job != null && Job.Job != null)
+            {
+                List<PlanItem> todayJob = GetJobByDay(date);
+                for (int i = 0; i < todayJob.Count; i++)
+                {
+                    AJob ajob = new AJob(todayJob[i]);
+                    fPanel.Controls.Add(ajob);
+                }
 
+            }
+        }
+
+        List<PlanItem> GetJobByDay(DateTime date)
+        {
+            return Job.Job.Where(p => p.Date.Year == date.Year && p.Date.Month == date.Month && p.Date.Day == date.Day).ToList();
         }
 
         private void tOdayToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +72,16 @@ namespace CalendarNotice
         private void dtpDate_ValueChanged(object sender, EventArgs e)
         {
             showJobByDate((sender as DateTimePicker).Value);
+        }
+
+        private void btnTomorrow_Click(object sender, EventArgs e)
+        {
+            dtpDate.Value = dtpDate.Value.AddDays(1);
+        }
+
+        private void Yesterday_Click(object sender, EventArgs e)
+        {
+            dtpDate.Value = dtpDate.Value.AddDays(-1);
         }
     }
 }

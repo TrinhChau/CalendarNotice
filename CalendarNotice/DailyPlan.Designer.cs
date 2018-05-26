@@ -59,6 +59,7 @@
             this.Yesterday.TabIndex = 3;
             this.Yesterday.Text = "Yesterday";
             this.Yesterday.UseVisualStyleBackColor = true;
+            this.Yesterday.Click += new System.EventHandler(this.Yesterday_Click);
             // 
             // btnTomorrow
             // 
@@ -68,6 +69,7 @@
             this.btnTomorrow.TabIndex = 2;
             this.btnTomorrow.Text = "Tomorrow";
             this.btnTomorrow.UseVisualStyleBackColor = true;
+            this.btnTomorrow.Click += new System.EventHandler(this.btnTomorrow_Click);
             // 
             // dtpDate
             // 
