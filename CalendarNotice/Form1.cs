@@ -91,7 +91,7 @@ namespace CalendarNotice
                 FromTime = new Point(4, 0),
                 ToTime = new Point(5, 0),
                 Job = "Demo thooi ahihi",
-                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+                Status = PlanItem.ListStatus[(int)EPlanItem.DONE]
             });
 
 
@@ -101,7 +101,7 @@ namespace CalendarNotice
                 FromTime = new Point(4, 0),
                 ToTime = new Point(5, 0),
                 Job = "Demo thooi ahihi",
-                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+                Status = PlanItem.ListStatus[(int)EPlanItem.DONE]
             });
              
              

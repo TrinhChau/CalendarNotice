@@ -35,7 +35,7 @@
             this.pnlJob = new System.Windows.Forms.Panel();
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.mnsAddJob = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnsIToday = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsToday = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.mnsMain.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             this.mnsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnsAddJob,
-            this.mnsIToday});
+            this.mnsToday});
             this.mnsMain.Location = new System.Drawing.Point(0, 0);
             this.mnsMain.Name = "mnsMain";
             this.mnsMain.Size = new System.Drawing.Size(910, 24);
@@ -102,13 +102,13 @@
             this.mnsAddJob.Name = "mnsAddJob";
             this.mnsAddJob.Size = new System.Drawing.Size(62, 20);
             this.mnsAddJob.Text = "Add Job";
+            this.mnsAddJob.Click += new System.EventHandler(this.mnsAddJob_Click);
             // 
-            // mnsIToday
+            // mnsToday
             // 
-            this.mnsIToday.Name = "mnsIToday";
-            this.mnsIToday.Size = new System.Drawing.Size(51, 20);
-            this.mnsIToday.Text = "Today";
-            this.mnsIToday.Click += new System.EventHandler(this.tOdayToolStripMenuItem_Click);
+            this.mnsToday.Name = "mnsToday";
+            this.mnsToday.Size = new System.Drawing.Size(51, 20);
+            this.mnsToday.Text = "Today";
             // 
             // DailyPlan
             // 
@@ -136,7 +136,7 @@
         private System.Windows.Forms.Panel pnlJob;
         private System.Windows.Forms.MenuStrip mnsMain;
         private System.Windows.Forms.ToolStripMenuItem mnsAddJob;
-        private System.Windows.Forms.ToolStripMenuItem mnsIToday;
+        private System.Windows.Forms.ToolStripMenuItem mnsToday;
         private System.Windows.Forms.Button Yesterday;
         private System.Windows.Forms.Button btnTomorrow;
     }

@@ -53,10 +53,28 @@ namespace CalendarNotice
                 for (int i = 0; i < todayJob.Count; i++)
                 {
                     AJob ajob = new AJob(todayJob[i]);
+                    ajob.Edited += ajob_Edited;
+                    ajob.Deleted += ajob_Deleted;
+;
+                      
                     fPanel.Controls.Add(ajob);
                 }
 
             }
+        }
+
+        void ajob_Deleted(object sender, EventArgs e)
+        {
+            AJob uc = sender as AJob;
+            PlanItem job = uc.Job;
+
+            fPanel.Controls.Remove(uc);
+            Job.Job.Remove(job);
+        }
+
+        void ajob_Edited(object sender, EventArgs e)
+        {
+           
         }
 
         List<PlanItem> GetJobByDay(DateTime date)
@@ -64,10 +82,7 @@ namespace CalendarNotice
             return Job.Job.Where(p => p.Date.Year == date.Year && p.Date.Month == date.Month && p.Date.Day == date.Day).ToList();
         }
 
-        private void tOdayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void dtpDate_ValueChanged(object sender, EventArgs e)
         {
@@ -82,6 +97,18 @@ namespace CalendarNotice
         private void Yesterday_Click(object sender, EventArgs e)
         {
             dtpDate.Value = dtpDate.Value.AddDays(-1);
+        }
+
+
+        private void mnsAddJob_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void mnsToday_Click(object sender, EventArgs e)
+        {
+            dtpDate.Value = DateTime.Now;
         }
     }
 }
