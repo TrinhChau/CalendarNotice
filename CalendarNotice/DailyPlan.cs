@@ -12,6 +12,7 @@ namespace CalendarNotice
 {
     public partial class DailyPlan : Form
     {
+        //lưu trữ lại
         private DateTime date;
 
         public DateTime Date
@@ -29,11 +30,13 @@ namespace CalendarNotice
         }
 
         FlowLayoutPanel fPanel = new FlowLayoutPanel();
+        
+
 
         public DailyPlan(DateTime date, PlanData job)
         {
             InitializeComponent();
-
+           
             this.Date = date;
             this.Job = job;
 
@@ -44,6 +47,7 @@ namespace CalendarNotice
 
             dtpDate.Value = Date;
         }
+
         void showJobByDate(DateTime date)
         {
             fPanel.Controls.Clear();
@@ -52,15 +56,20 @@ namespace CalendarNotice
                 List<PlanItem> todayJob = GetJobByDay(date);
                 for (int i = 0; i < todayJob.Count; i++)
                 {
-                    AJob ajob = new AJob(todayJob[i]);
-                    ajob.Edited += ajob_Edited;
-                    ajob.Deleted += ajob_Deleted;
-;
-                      
-                    fPanel.Controls.Add(ajob);
+                    AddJob(todayJob[i]);
+                  
                 }
 
             }
+        }
+        void AddJob(PlanItem job)
+        {
+            AJob ajob = new AJob(job);
+            ajob.Edited += ajob_Edited;
+            ajob.Deleted += ajob_Deleted;
+            
+
+            fPanel.Controls.Add(ajob);
         }
 
         void ajob_Deleted(object sender, EventArgs e)
@@ -102,8 +111,11 @@ namespace CalendarNotice
 
         private void mnsAddJob_Click(object sender, EventArgs e)
         {
-
+            PlanItem item =new PlanItem(){Date = dtpDate.Value };
+            Job.Job.Add(item);
+            AddJob(item);
         }
+
 
 
         private void mnsToday_Click(object sender, EventArgs e)

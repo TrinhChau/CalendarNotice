@@ -75,34 +75,7 @@ namespace CalendarNotice
             });
 
 
-            Job.Job.Add(new PlanItem()
-            {
-                Date = DateTime.Now,
-                FromTime = new Point(4, 0),
-                ToTime = new Point(5, 0),
-                Job = "Demo thooi ahihi",
-                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            });
 
-
-            Job.Job.Add(new PlanItem()
-            {
-                Date = DateTime.Now,
-                FromTime = new Point(4, 0),
-                ToTime = new Point(5, 0),
-                Job = "Demo thooi ahihi",
-                Status = PlanItem.ListStatus[(int)EPlanItem.DONE]
-            });
-
-
-            Job.Job.Add(new PlanItem()
-            {
-                Date = DateTime.Now.AddDays(-1),
-                FromTime = new Point(4, 0),
-                ToTime = new Point(5, 0),
-                Job = "Demo thooi ahihi",
-                Status = PlanItem.ListStatus[(int)EPlanItem.DONE]
-            });
              
              
 
@@ -139,8 +112,10 @@ namespace CalendarNotice
 
         void btn_Click(object sender, EventArgs e)
         {
+            //nhấn vào text k có thì k đc nhấn
             if (string.IsNullOrEmpty((sender as Button).Text))
                 return;
+
             DailyPlan daily = new DailyPlan(new DateTime(dtpDate.Value.Year, dtpDate.Value.Month, Convert.ToInt32((sender as Button).Text)),Job);
             daily.ShowDialog();
         }

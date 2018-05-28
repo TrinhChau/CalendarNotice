@@ -51,7 +51,7 @@ namespace CalendarNotice
             nmFromMinutes.Value = Job.FromTime.Y;
             nmToHours.Value = Job.ToTime.X;
             nmToMinute.Value = Job.ToTime.Y;
-            //cbStatus.SelectedIndex = PlanItem.ListStatus.IndexOf(Job.Status);
+            cbStatus.SelectedIndex = PlanItem.ListStatus.IndexOf(Job.Status);
             ckbDone.Checked = PlanItem.ListStatus.IndexOf(Job.Status) == (int)EPlanItem.DONE ? true : false;
         }
 
@@ -66,9 +66,9 @@ namespace CalendarNotice
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Job.Job = txtJob.Text;
-            Job.FromTime = new Point((int)nmFromHours.Value, (int)nmFromHours.Value);
+            Job.FromTime = new Point((int)nmFromHours.Value, (int)nmFromMinutes.Value);
             Job.ToTime = new Point((int)nmToHours.Value, (int)nmToMinute.Value);
-            Job.Status = cbStatus.SelectedItem.ToString();
+            Job.Status = PlanItem.ListStatus[cbStatus.SelectedIndex];
 
             if (edited != null)
                 edited(this, new EventArgs());

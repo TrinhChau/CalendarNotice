@@ -2,7 +2,7 @@
 <PlanData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Job>
     <PlanItem>
-      <Date>2018-05-27T23:26:26.2433789+07:00</Date>
+      <Date>2018-05-28T15:21:54.4808982+07:00</Date>
       <Job>Demo thooi ahihi</Job>
       <FromTime>
         <X>4</X>
@@ -15,7 +15,7 @@
       <Status>COMING</Status>
     </PlanItem>
     <PlanItem>
-      <Date>2018-05-27T23:26:26.2443793+07:00</Date>
+      <Date>2018-05-28T15:21:54.4808982+07:00</Date>
       <Job>Demo thooi ahihi</Job>
       <FromTime>
         <X>4</X>
@@ -25,46 +25,34 @@
         <X>5</X>
         <Y>0</Y>
       </ToTime>
-      <Status>DONE</Status>
-    </PlanItem>
-    <PlanItem>
-      <Date>2018-05-26T23:26:26.2443793+07:00</Date>
-      <Job>Demo thooi ahihi</Job>
-      <FromTime>
-        <X>4</X>
-        <Y>0</Y>
-      </FromTime>
-      <ToTime>
-        <X>5</X>
-        <Y>0</Y>
-      </ToTime>
-      <Status>DONE</Status>
+      <Status>COMING</Status>
     </PlanItem>
   </Job>
-</PlanData>te>2018-05-27T23:26:26.2443793+07:00</Date>
-      <Job>Demo thooi ahihi</Job>
+</PlanData> <Date>2018-05-29T00:00:00</Date>
+      <Job>nộp bài</Job>
       <FromTime>
-        <X>4</X>
+        <X>8</X>
         <Y>0</Y>
       </FromTime>
       <ToTime>
-        <X>5</X>
+        <X>0</X>
         <Y>0</Y>
       </ToTime>
-      <Status>DONE</Status>
+      <Status>COMING</Status>
     </PlanItem>
     <PlanItem>
-      <Date>2018-05-26T23:26:26.2443793+07:00</Date>
-      <Job>Demo thooi ahihi</Job>
+      <Date>2018-05-29T00:00:00</Date>
       <FromTime>
-        <X>4</X>
+        <X>0</X>
         <Y>0</Y>
       </FromTime>
       <ToTime>
-        <X>5</X>
+        <X>0</X>
         <Y>0</Y>
       </ToTime>
-      <Status>DONE</Status>
     </PlanItem>
   </Job>
-</PlanData>
+</PlanData>Status>
+    </PlanItem>
+  </Job>
+</PlanData>Data>
