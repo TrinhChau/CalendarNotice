@@ -15,6 +15,16 @@ namespace CalendarNotice
     public partial class Form1 : Form
     {
         #region Peoperties
+      
+
+        private int appTime;
+
+        public int AppTime
+        {
+            get { return appTime; }
+            set { appTime = value; }
+        }
+
         private string filePath = "data.xml";
         private List<List<Button>> matrix;
 
@@ -23,6 +33,7 @@ namespace CalendarNotice
             get { return matrix; }
             set { matrix = value; }
         }
+
 
         private PlanData job;
 
@@ -39,6 +50,9 @@ namespace CalendarNotice
         {
             InitializeComponent();
 
+            
+            tmNotify.Start();
+            appTime = 0;
             LoadMatrix();
 
             try
@@ -61,24 +75,9 @@ namespace CalendarNotice
                 Date = DateTime.Now,
                 FromTime = new Point(4, 0),
                 ToTime = new Point(5, 0),
-                Job = "Demo thooi ahihi",
+                Job = "Let's Go",
                 Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
             });
-
-            Job.Job.Add(new PlanItem()
-            {
-                Date = DateTime.Now,
-                FromTime = new Point(4, 0),
-                ToTime = new Point(5, 0),
-                Job = "Demo thooi ahihi",
-                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            });
-
-
-
-             
-             
-
         }
 
         /*private void Form1_Load(object sender, EventArgs e)
@@ -140,7 +139,7 @@ namespace CalendarNotice
                     else
                         return 28;
 
-                        break;
+                        //break;
                 default: 
                         return 30;;
           
@@ -241,7 +240,7 @@ namespace CalendarNotice
                 return result;
               
             }
-            catch(Exception e)
+            catch(Exception )
             {
                 fs.Close();
                 throw new NotImplementedException();
@@ -254,6 +253,39 @@ namespace CalendarNotice
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             SerializeToXML(Job, filePath);
+        }
+
+        private void tmNotify_Tick(object sender, EventArgs e)
+        {
+
+            if (!ckbNotify.Checked)
+                return;
+
+            AppTime++;
+
+            if (AppTime < Cons.notifyTime)
+                return;
+            
+            if(Job ==null || Job.Job == null)
+                return;
+
+            DateTime currentDate = DateTime.Now;
+            List<PlanItem> todayjobs = Job.Job.Where(u=>u.Date.Year == currentDate.Year && u.Date.Month==currentDate.Month && u.Date.Day == currentDate.Day ).ToList();
+            Notify.ShowBalloonTip(Cons.notifyTimeOut, "List Job", string.Format("You have (0) job today", todayjobs.Count), ToolTipIcon.Info);
+          
+            AppTime = 0;
+        }
+
+
+
+        private void nmNotify_ValueChanged(object sender, EventArgs e)
+        {
+            Cons.notifyTime = (int)nmNotify.Value;
+        }
+
+        private void ckbNotify_CheckedChanged(object sender, EventArgs e)
+        {
+            nmNotify.Enabled = ckbNotify.Checked;
         }
 
     }

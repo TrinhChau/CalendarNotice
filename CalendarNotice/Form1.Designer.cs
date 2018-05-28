@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -47,6 +49,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.pnlMatrixx = new System.Windows.Forms.Panel();
             this.btnPrevious = new System.Windows.Forms.Button();
+            this.tmNotify = new System.Windows.Forms.Timer(this.components);
+            this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -85,6 +89,7 @@
             // 
             // nmNotify
             // 
+            this.nmNotify.Enabled = false;
             this.nmNotify.Location = new System.Drawing.Point(63, 2);
             this.nmNotify.Maximum = new decimal(new int[] {
             3600,
@@ -104,6 +109,7 @@
             0,
             0,
             0});
+            this.nmNotify.ValueChanged += new System.EventHandler(this.nmNotify_ValueChanged);
             // 
             // ckbNotify
             // 
@@ -114,6 +120,7 @@
             this.ckbNotify.TabIndex = 0;
             this.ckbNotify.Text = "Notify";
             this.ckbNotify.UseVisualStyleBackColor = true;
+            this.ckbNotify.CheckedChanged += new System.EventHandler(this.ckbNotify_CheckedChanged);
             // 
             // btnToday
             // 
@@ -248,12 +255,25 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
+            // tmNotify
+            // 
+            this.tmNotify.Enabled = true;
+            this.tmNotify.Interval = 60000;
+            this.tmNotify.Tick += new System.EventHandler(this.tmNotify_Tick);
+            // 
+            // Notify
+            // 
+            this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
+            this.Notify.Text = "Calendar";
+            this.Notify.Visible = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 485);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calendar Notice";
@@ -290,6 +310,8 @@
         private System.Windows.Forms.Button btnWednesday;
         private System.Windows.Forms.Button btnTuesday;
         private System.Windows.Forms.Button btnMonday;
+        private System.Windows.Forms.Timer tmNotify;
+        private System.Windows.Forms.NotifyIcon Notify;
     }
 }
 

@@ -15,6 +15,8 @@ namespace CalendarNotice
         public static int dateButtonHeight = 52;
 
         public static int margin = 6;
+        public static int notifyTime = 1;
+        public static int notifyTimeOut = 10000;
 
     }
 }
